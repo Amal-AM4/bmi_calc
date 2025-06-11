@@ -17,71 +17,31 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: Row(
               children: [
-                Expanded(
-                  child: Container(
-                    height: 200.0,
-                    width: 170.0,
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0),
-                      color: Color(0xFF1D1F33),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    height: 200.0,
-                    width: 170.0,
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0),
-                      color: Color(0xFF1D1F33),
-                    ),
-                  ),
-                ),
+                Expanded(child: ReusableCard()),
+                Expanded(child: ReusableCard()),
               ],
             ),
           ),
-          Expanded(
-            child: Container(
-              height: 200.0,
-              width: 170.0,
-              margin: EdgeInsets.all(15.0),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15.0),
-                color: Color(0xFF1D1F33),
-              ),
-            ),
-          ),
+          Expanded(child: ReusableCard()),
           Expanded(
             child: Row(
               children: [
-                Expanded(
-                  child: Container(
-                    height: 200.0,
-                    width: 170.0,
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0),
-                      color: Color(0xFF1D1F33),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    height: 200.0,
-                    width: 170.0,
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0),
-                      color: Color(0xFF1D1F33),
-                    ),
-                  ),
-                ),
+                Expanded(child: ReusableCard()),
+                Expanded(child: ReusableCard()),
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Container ReusableCard() {
+    return Container(
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15.0),
+        color: Color(0xFF1D1F33),
       ),
     );
   }
