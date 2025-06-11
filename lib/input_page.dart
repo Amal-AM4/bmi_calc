@@ -13,6 +13,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   int height = 180;
+  int weight = 45;
 
   Color maleInactiveColor = kinactiveContainerColor;
   Color femaleInactiveColor = kinactiveContainerColor;
@@ -103,17 +104,24 @@ class _InputPageState extends State<InputPage> {
                       Text('cm'),
                     ],
                   ),
-                  Slider(
-                    value: height.toDouble(),
-                    min: 55,
-                    max: 251,
-                    activeColor: Color(0xFFEA1556),
-                    inactiveColor: Color(0xFF8D8E98),
-                    onChanged: (double newValue) {
-                      setState(() {
-                        height = newValue.round();
-                      });
-                    },
+                  SliderTheme(
+                    data: SliderThemeData(
+                      thumbShape: RoundSliderThumbShape(
+                        enabledThumbRadius: 15.0,
+                      ),
+                    ),
+                    child: Slider(
+                      value: height.toDouble(),
+                      min: 55,
+                      max: 251,
+                      activeColor: Color(0xFFEA1556),
+                      inactiveColor: Color(0xFF8D8E98),
+                      onChanged: (double newValue) {
+                        setState(() {
+                          height = newValue.round();
+                        });
+                      },
+                    ),
                   ),
                 ],
               ),
@@ -125,7 +133,29 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     kolor: kresusableCardColor,
-                    cardChild: Text('data'),
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('WEIGHT', style: kLabelStyle),
+                        Text(weight.toString(), style: knumberStyle),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FloatingActionButton(
+                              onPressed: () {},
+                              backgroundColor: Color(0xFF4c4f5e),
+                              child: Icon(Icons.add, color: Colors.white),
+                            ),
+                            SizedBox(width: 10.0),
+                            FloatingActionButton(
+                              onPressed: () {},
+                              backgroundColor: Color(0xFF4c4f5e),
+                              child: Icon(Icons.add, color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
