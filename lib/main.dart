@@ -9,7 +9,7 @@ class BMICalculator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
+    return MaterialApp(
       home: InputPage(),
     );
   }
