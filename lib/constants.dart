@@ -8,3 +8,8 @@ const kinactiveContainerColor = Color(0xFF111328);
 const kLabelStyle = TextStyle(color: Color(0xFF8D8F9E), fontSize: 18.0);
 
 const knumberStyle = TextStyle(fontSize: 50.0, fontWeight: FontWeight.w900);
+
+const kBottomContainerTextStyle = TextStyle(
+  fontSize: 20.0,
+  fontWeight: FontWeight.bold,
+);
