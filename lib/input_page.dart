@@ -23,7 +23,7 @@ class _InputPageState extends State<InputPage> {
     // male = 1, female = 2
     if (gender == 1) {
       if (maleInactiveColor == kinactiveContainerColor) {
-        maleInactiveColor = kresusableCardColor;
+        maleInactiveColor = activeColorGender;
         femaleInactiveColor = kinactiveContainerColor;
       } else {
         maleInactiveColor = kinactiveContainerColor;
@@ -32,7 +32,7 @@ class _InputPageState extends State<InputPage> {
 
     if (gender == 2) {
       if (femaleInactiveColor == kinactiveContainerColor) {
-        femaleInactiveColor = kresusableCardColor;
+        femaleInactiveColor = activeColorGender;
         maleInactiveColor = kinactiveContainerColor;
       } else {
         femaleInactiveColor = kinactiveContainerColor;
@@ -204,9 +204,7 @@ class _InputPageState extends State<InputPage> {
           ),
 
           Container(
-            child: Center(
-              child: Text('CALCULATE', style: kBottomContainerTextStyle),
-            ),
+            child: Center(child: Text('CALCULATE', style: kBottomTextStyle)),
             margin: EdgeInsets.only(top: 10.0),
             padding: EdgeInsets.only(bottom: 10.0),
             color: kbottomContainerColor,
