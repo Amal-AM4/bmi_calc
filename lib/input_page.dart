@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+const bottomContainerHeight = 80.0;
+const resusableCardColor = Color(0xFF1D1F33);
+const bottomContainerColor = Color(0xFFEA1556);
+
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
 
@@ -17,53 +21,26 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: Row(
               children: [
-                Expanded(
-                  child: ReusableCard(),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0),
-                      color: Color(0xFF1D1F33),
-                    ),
-                  ),
-                ),
+                Expanded(child: ReusableCard(kolor: resusableCardColor)),
+                Expanded(child: ReusableCard(kolor: resusableCardColor)),
               ],
             ),
           ),
-          Expanded(
-            child: Container(
-              margin: EdgeInsets.all(15.0),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15.0),
-                color: Color(0xFF1D1F33),
-              ),
-            ),
-          ),
+          Expanded(child: ReusableCard(kolor: resusableCardColor)),
           Expanded(
             child: Row(
               children: [
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0),
-                      color: Color(0xFF1D1F33),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0),
-                      color: Color(0xFF1D1F33),
-                    ),
-                  ),
-                ),
+                Expanded(child: ReusableCard(kolor: resusableCardColor)),
+                Expanded(child: ReusableCard(kolor: resusableCardColor)),
               ],
             ),
+          ),
+
+          Container(
+            margin: EdgeInsets.only(top: 10.0),
+            color: bottomContainerColor,
+            width: double.infinity,
+            height: bottomContainerHeight,
           ),
         ],
       ),
@@ -72,9 +49,10 @@ class _InputPageState extends State<InputPage> {
 }
 
 class ReusableCard extends StatelessWidget {
-  const ReusableCard({
-    super.key,
-  });
+  // const ReusableCard({super.key});
+
+  final Color kolor;
+  ReusableCard({required this.kolor});
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +60,7 @@ class ReusableCard extends StatelessWidget {
       margin: EdgeInsets.all(15.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.0),
-        color: Color(0xFF1D1F33),
+        color: kolor,
       ),
     );
   }
