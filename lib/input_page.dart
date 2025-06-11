@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'resusable_card.dart';
+import 'icon_details.dart';
 
 const bottomContainerHeight = 80.0;
 const resusableCardColor = Color(0xFF1D1F33);
@@ -21,17 +24,48 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: Row(
               children: [
-                Expanded(child: ReusableCard(kolor: resusableCardColor)),
-                Expanded(child: ReusableCard(kolor: resusableCardColor)),
+                Expanded(
+                  child: ReusableCard(
+                    kolor: resusableCardColor,
+                    cardChild: iconDetails(
+                      icon: FontAwesomeIcons.mars,
+                      label: 'MALE',
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ReusableCard(
+                    kolor: resusableCardColor,
+                    cardChild: iconDetails(
+                      icon: FontAwesomeIcons.venus,
+                      label: 'FEMALE',
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
-          Expanded(child: ReusableCard(kolor: resusableCardColor)),
+          Expanded(
+            child: ReusableCard(
+              kolor: resusableCardColor,
+              cardChild: Text('data'),
+            ),
+          ),
           Expanded(
             child: Row(
               children: [
-                Expanded(child: ReusableCard(kolor: resusableCardColor)),
-                Expanded(child: ReusableCard(kolor: resusableCardColor)),
+                Expanded(
+                  child: ReusableCard(
+                    kolor: resusableCardColor,
+                    cardChild: Text('data'),
+                  ),
+                ),
+                Expanded(
+                  child: ReusableCard(
+                    kolor: resusableCardColor,
+                    cardChild: Text('data'),
+                  ),
+                ),
               ],
             ),
           ),
@@ -43,24 +77,6 @@ class _InputPageState extends State<InputPage> {
             height: bottomContainerHeight,
           ),
         ],
-      ),
-    );
-  }
-}
-
-class ReusableCard extends StatelessWidget {
-  // const ReusableCard({super.key});
-
-  final Color kolor;
-  ReusableCard({required this.kolor});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(15.0),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15.0),
-        color: kolor,
       ),
     );
   }
