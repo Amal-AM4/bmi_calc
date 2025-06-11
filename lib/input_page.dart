@@ -12,6 +12,8 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  int height = 180;
+
   Color maleInactiveColor = kinactiveContainerColor;
   Color femaleInactiveColor = kinactiveContainerColor;
 
@@ -84,10 +86,35 @@ class _InputPageState extends State<InputPage> {
             child: ReusableCard(
               kolor: kresusableCardColor,
               cardChild: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text('HEIGHT', style: kLabelStyle),
-                  Row(children: [Text('180', style: knumberStyle)]),
+                  Text(
+                    'HEIGHT',
+                    style: kLabelStyle,
+                    textAlign: TextAlign.center,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Text(height.toString(), style: knumberStyle),
+                      Text('cm'),
+                    ],
+                  ),
+                  Slider(
+                    value: height.toDouble(),
+                    min: 55,
+                    max: 251,
+                    activeColor: Color(0xFFEA1556),
+                    inactiveColor: Color(0xFF8D8E98),
+                    onChanged: (double newValue) {
+                      setState(() {
+                        height = newValue.round();
+                      });
+                    },
+                  ),
                 ],
               ),
             ),
