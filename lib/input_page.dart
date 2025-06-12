@@ -3,6 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'resusable_card.dart';
 import 'icon_details.dart';
 import 'constants.dart';
+import 'Extracted_Buttons.dart';
+
+// import 'ResultPage.dart';
 
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
@@ -203,35 +206,11 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
 
-          Container(
-            child: Center(child: Text('CALCULATE', style: kBottomTextStyle)),
-            margin: EdgeInsets.only(top: 10.0),
-            padding: EdgeInsets.only(bottom: 10.0),
-            color: kbottomContainerColor,
-            width: double.infinity,
-            height: kbottomContainerHeight,
-          ),
+          BottomButton(),
         ],
       ),
     );
   }
 }
 
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton({required this.icon, required this.onPressed});
 
-  final IconData icon;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child: Icon(icon),
-      onPressed: onPressed,
-      elevation: 6.0,
-      shape: CircleBorder(),
-      fillColor: Color(0xFF4c4f5e),
-      constraints: BoxConstraints.tightFor(width: 56.0, height: 56.0),
-    );
-  }
-}

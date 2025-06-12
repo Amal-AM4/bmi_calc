@@ -11,3 +11,15 @@ const kLabelStyle = TextStyle(color: Color(0xFF8D8F9E), fontSize: 18.0);
 const knumberStyle = TextStyle(fontSize: 50.0, fontWeight: FontWeight.w900);
 
 const kBottomTextStyle = TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold);
+
+const kTitleTextStyle = TextStyle(fontSize: 45.0, fontWeight: FontWeight.bold);
+
+const kNormalText = TextStyle(
+  fontSize: 22.0,
+  fontWeight: FontWeight.bold,
+  color: Color.fromARGB(255, 67, 180, 71),
+);
+
+const kLargeText = TextStyle(fontSize: 100.0, fontWeight: FontWeight.bold);
+
+const kInterpretationStyle = TextStyle(fontSize: 20.0);
