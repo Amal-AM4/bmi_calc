@@ -5,6 +5,8 @@ import 'icon_details.dart';
 import 'constants.dart';
 import 'Extracted_Buttons.dart';
 
+import 'Calculator.dart';
+
 import 'ResultPage.dart';
 
 class InputPage extends StatefulWidget {
@@ -209,9 +211,16 @@ class _InputPageState extends State<InputPage> {
           BottomButton(
             buttonName: 'CALCULATE',
             onPressed: () {
+
+              Calculator calc = Calculator(height: height, weight: weight);
+
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ResultScreen()),
+                MaterialPageRoute(builder: (context) => ResultScreen(
+                  actualBmiResultValue: calc.calculateBMI(),
+                  bmiResult: calc.getResult(),
+                  interpretation: calc.getInterpretation(),
+                )),
               );
             },
           ),

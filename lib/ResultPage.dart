@@ -4,7 +4,17 @@ import 'resusable_card.dart';
 import 'Extracted_Buttons.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key});
+  // const ResultScreen({super.key});
+
+  final String bmiResult;
+  final String actualBmiResultValue;
+  final String interpretation;
+
+  ResultScreen({
+    required this.bmiResult,
+    required this.actualBmiResultValue,
+    required this.interpretation,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +38,12 @@ class ResultScreen extends StatelessWidget {
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('NORMAL', style: kNormalText),
-                  Text('15', style: kLargeText),
+                  Text(bmiResult, style: kNormalText),
+                  Text(actualBmiResultValue, style: kLargeText),
                   Padding(
                     padding: const EdgeInsets.all(1.0),
                     child: Text(
-                      'Your BMI is Normal, You can eat whatever you want',
+                      interpretation,
                       style: kInterpretationStyle,
                       textAlign: TextAlign.center,
                     ),
