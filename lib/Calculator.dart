@@ -4,7 +4,7 @@ class Calculator {
   final int height;
   final int weight;
 
-  double _bmi;
+  late double _bmi;
 
   Calculator({required this.height, required this.weight});
 
@@ -21,6 +21,16 @@ class Calculator {
       return 'NORMAL';
     } else {
       return 'UNDERWEIGHT';
+    }
+  }
+
+  String getInterpretation() {
+    if (_bmi >= 25) {
+      return 'You have a higher body weight than others, You can do more exercises';
+    } else if (_bmi >= 18.5) {
+      return 'You have a normal body weight, Great Job!';
+    } else {
+      return 'You have a lower body weight than others, You can eat more';
     }
   }
 }
