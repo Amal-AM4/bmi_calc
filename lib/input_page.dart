@@ -5,7 +5,7 @@ import 'icon_details.dart';
 import 'constants.dart';
 import 'Extracted_Buttons.dart';
 
-// import 'ResultPage.dart';
+import 'ResultPage.dart';
 
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
@@ -206,11 +206,17 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
 
-          BottomButton(),
+          BottomButton(
+            buttonName: 'CALCULATE',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ResultScreen()),
+              );
+            },
+          ),
         ],
       ),
     );
   }
 }
-
-

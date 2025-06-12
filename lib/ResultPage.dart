@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'resusable_card.dart';
+import 'Extracted_Buttons.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({super.key});
@@ -29,14 +30,21 @@ class ResultScreen extends StatelessWidget {
                 children: [
                   Text('NORMAL', style: kNormalText),
                   Text('15', style: kLargeText),
-                  Text(
-                    'Your BMI is Normal, You can eat whatever you wnat',
-                    style: kInterpretationStyle,
-                    textAlign: TextAlign.center,
+                  Padding(
+                    padding: const EdgeInsets.all(1.0),
+                    child: Text(
+                      'Your BMI is Normal, You can eat whatever you want',
+                      style: kInterpretationStyle,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ],
               ),
             ),
+          ),
+          BottomButton(
+            buttonName: 'CALCULATE AGAIN',
+            onPressed: Navigator.of(context).pop,
           ),
         ],
       ),
