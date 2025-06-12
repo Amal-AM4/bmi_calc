@@ -45,7 +45,7 @@ flutter doctor
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/bmi-calculator.git
+git clone https://github.com/Amal-AM4/bmi-calculator.git
 cd bmi-calculator
 ```
 
